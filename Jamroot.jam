@@ -19,11 +19,12 @@ lib gmock
 :
 	[ path.join $(PROJECT_DIR) lib/gmock/gmock-gtest-all.cc ]
 :
+	<include>lib/gmock
 	<link>static
 :
 	<address-model>32  
 :
-	<include>./lib/gmock
+	<include>lib/gmock
 ;
 
 lib dojo
