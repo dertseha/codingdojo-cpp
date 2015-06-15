@@ -13,8 +13,13 @@ To build the project, you need either
 Simply call ```b2``` in the project root directory. Unit-tests are built and automatically executed.
 
 ### Using CMake
-
-
+Generate your project files with
+```
+mkdir build
+cd build
+cmake ..
+```
+Then run your build tool with the generated files. The unit-tests need to be run manually.
 
 ## License
 
