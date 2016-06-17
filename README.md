@@ -3,7 +3,7 @@
 This is a template for a coding dojo. The language is C++.
 
 ## Setup
-The repository contains the [Google Mock](https://code.google.com/p/googlemock/) framework.
+The repository contains the [Google Mock](https://github.com/google/googletest) framework.
 
 To build the project, you need either
 * [Boost.Build](http://www.boost.org/build/index.html) or
