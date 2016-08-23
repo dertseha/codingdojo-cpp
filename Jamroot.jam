@@ -23,7 +23,7 @@ lib gmock
 	<include>lib/gmock
 	<link>static
 :
-	<address-model>32  
+	<address-model>64
 :
 	<include>lib/gmock
 ;
@@ -34,7 +34,7 @@ lib dojo
 :
 	<link>static
 :
-	<address-model>32  
+	<address-model>64  
 :
 	<include>src/main
 ;
@@ -49,5 +49,5 @@ unit-test dojo-test
 	[ path.glob-tree [ path.join $(PROJECT_DIR) src/test ] : *.c* ]
 :
 :
-	<address-model>32  
+	<address-model>64  
 ;
