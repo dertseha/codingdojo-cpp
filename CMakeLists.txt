@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 2.6)
+cmake_minimum_required (VERSION 3.0...3.15)
 project (codingdojo)
 enable_testing()
 
@@ -8,14 +8,11 @@ endif (WIN32)
 
 include_directories(${PROJECT_SOURCE_DIR}/src/main)
 
-file(GLOB_RECURSE LIB_SOURCE src/main/*.c*)
-add_library(dojo STATIC ${LIB_SOURCE})
+add_library(dojo STATIC)
+target_sources(dojo PRIVATE ./src/main/DummyClass.cpp)
 
 include_directories(${PROJECT_SOURCE_DIR}/lib/gmock)
 add_library(gmock STATIC lib/gmock/gmock-gtest-all.cc)
-
-
-file(GLOB_RECURSE LIB_TEST_SOURCE src/test/*.c*)
 
 macro(package_add_test TESTNAME)
     add_executable(${TESTNAME} ${ARGN} lib/gmock/gmock_main.cc)
@@ -25,3 +22,4 @@ macro(package_add_test TESTNAME)
 endmacro()
 
 package_add_test(UnitTests ${LIB_TEST_SOURCE})
+target_sources(UnitTests PRIVATE ./src/test/DummyTest.cpp)
