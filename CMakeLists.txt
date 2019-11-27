@@ -23,7 +23,6 @@ endif()
 add_library(project-settings INTERFACE)
 target_compile_features(project-settings INTERFACE cxx_std_17)
 
-
 ##################################################################
 ### Define sources                                             ###
 ##################################################################
@@ -38,10 +37,17 @@ set(PROJECT_HEADERS
 target_sources(${PROJECT_NAME} PUBLIC ${PROJECT_HEADERS} PRIVATE ${PROJECT_SOURCES})
 
 ##################################################################
-### Apply all settings to current project                      ###
+### Apply all settings to codingdojo lib                       ###
 ##################################################################
 target_link_libraries(${PROJECT_NAME} PUBLIC project-settings)
+target_compile_options(${PROJECT_NAME} PRIVATE
+                           $<$<OR:$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:GNU>>:-Wall>
+                           $<$<CXX_COMPILER_ID:MSVC>:-W4>
+)
 
+##################################################################
+### Add tests                                                  ###
+##################################################################
 macro(package_add_test TESTNAME TESTSOURCES)
     add_executable(${TESTNAME} ${ARGN})
     add_gtest(${TESTNAME})
