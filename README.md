@@ -3,14 +3,9 @@
 This is a template for a coding dojo. The language is C++.
 
 ## Setup
-The repository contains the [Google Mock](https://github.com/google/googletest) framework.
+The repository uses the [Google Mock](https://github.com/google/googletest) framework.
 
-To build the project, you need either
-* [Boost.Build](http://www.boost.org/build/index.html) or
-* [CMake](http://www.cmake.org/)
-
-### Using Boost.Build
-Simply call ```b2``` in the project root directory. Unit-tests are built and automatically executed.
+To build the project, you need [CMake](http://www.cmake.org/)
 
 ### Using CMake
 Generate your project files with

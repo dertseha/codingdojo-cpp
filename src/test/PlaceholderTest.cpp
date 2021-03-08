@@ -1,8 +1,8 @@
 #include <gmock/gmock.h>
 
-#include <DummyClass.h>
+#include "PlaceholderClass.h"
 
-class DummyTest: public testing::Test
+class PlaceholderTest: public testing::Test
 {
 public:
    class Thingie
@@ -24,19 +24,19 @@ protected:
 };
 
 
-void DummyTest::SetUp()
+void PlaceholderTest::SetUp()
 {
 
 }
 
-TEST_F(DummyTest, VerifyTestSystemWorks)
+TEST_F(PlaceholderTest, VerifyTestSystemWorks)
 {
-   DummyClass dummy(42);
+   PlaceholderClass placeholder(42);
 
-   EXPECT_EQ(42, dummy.getValue());
+   EXPECT_EQ(42, placeholder.getValue());
 }
 
-TEST_F(DummyTest, VerifyMockingSystemWorks)
+TEST_F(PlaceholderTest, VerifyMockingSystemWorks)
 {
    MockedThing thing;
 

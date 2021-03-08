@@ -28,10 +28,10 @@ target_compile_features(project-settings INTERFACE cxx_std_17)
 ##################################################################
 add_library(${PROJECT_NAME} STATIC)
 set(PROJECT_SOURCES
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/main/DummyClass.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/main/PlaceholderClass.cpp"
 )
 set(PROJECT_HEADERS 
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/main/DummyClass.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/main/PlaceholderClass.h"
 )
 
 target_sources(${PROJECT_NAME} PUBLIC ${PROJECT_HEADERS} PRIVATE ${PROJECT_SOURCES})
@@ -57,5 +57,5 @@ macro(package_add_test TESTNAME TESTSOURCES)
 endmacro()
 
 SET(TEST_SOURCES
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/test/DummyTest.cpp")
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/test/PlaceholderTest.cpp")
 package_add_test(UnitTests ${TEST_SOURCES})
